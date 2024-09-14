@@ -4,7 +4,7 @@
 # Author: https://github.com/Arcitec
 # Project: https://github.com/Arcitec/iconix
 # Name: iconix
-# Version: 2.0.0
+# Version: 2.1.0
 
 from dataclasses import dataclass, field
 from pathlib import Path
