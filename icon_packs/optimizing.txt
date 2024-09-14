@@ -1,0 +1,1 @@
+All images have been losslessly optimized with "optipng -o 7 *.png".
