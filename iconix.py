@@ -309,7 +309,7 @@ def download_with_progress(
             print(f"\r{message.ljust(max_line_length)}", end="")
             max_line_length = max(max_line_length, len(message))
 
-    print(f"{'\n' if is_terminal else ''}Download complete.")
+    print(f"{chr(10) if is_terminal else ''}Download complete.")  # 10 = Newline.
 
     # Reset the BytesIO object to the beginning for further processing.
     data.seek(0)
