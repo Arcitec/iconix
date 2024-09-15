@@ -20,7 +20,7 @@ pip install -r requirements-svg.txt
 4. Run the patcher and follow the instructions. If you decide to use custom icons, remember that their contents should extend to the edges of the input image (without any padding).
 
 ```sh
-./iconix.py
+./iconix
 ```
 
 5. Have fun! You *never* have to run the patcher again.
