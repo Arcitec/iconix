@@ -5,25 +5,38 @@ Makes Vesktop feel more at home for the average Discord enjoyers.
 
 1. Download [this repository](https://github.com/Arcitec/iconix).
 
-2. Install the Python3 requirements:
+2. Ensure that you have Python 3.10 (or preferably even higher) on your system. You can check by running the following command:
 
 ```sh
-pip install -r requirements.txt
+python --version
 ```
 
-3. (Optional) Install CairoSVG if you want to build icons from SVG files. You may also need to install some [external packages](https://cairosvg.org/documentation/) to use CairoSVG.
+3. (Optional) If your distro ships an ancient Python version, then you will need to install a newer one with [pyenv](https://github.com/pyenv/pyenv), and then tell Iconix to use it, by running the following commands inside the `iconix` directory:
 
 ```sh
-pip install -r requirements-svg.txt
+pyenv install 3.12
+pyenv local 3.12
 ```
 
-4. Run the patcher and follow the instructions. If you decide to use custom icons, remember that their contents should extend to the edges of the input image (without any padding).
+4. Install the Python3 requirements:
+
+```sh
+python -m pip install -r requirements.txt
+```
+
+5. (Optional) Install CairoSVG if you want to build icons from SVG files. You may also need to install some [external packages](https://cairosvg.org/documentation/) to use CairoSVG.
+
+```sh
+python -m pip install -r requirements-svg.txt
+```
+
+6. Run the patcher and follow the instructions. If you decide to use custom icons, remember that their contents should extend to the edges of the input image (without any padding).
 
 ```sh
 ./iconix
 ```
 
-5. Have fun! You *never* have to run the patcher again.
+7. Have fun! You *never* have to run the patcher again.
 
 
 ---
