@@ -264,6 +264,21 @@ def convert_bytes_to_string(size: int) -> str:
         return "{} Bytes".format(size)
 
 
+def icon_name_to_app_name(icon_name: str) -> str:
+    # Get last component of Flatpak icon names (such as "dev.vencord.Vesktop").
+    if "." in icon_name:
+        icon_name = icon_name.rsplit(".", 1)[1]
+
+    # Replace any underscores with spaces, strip surrounding whitespace,
+    # uppercase every word's first character and lowercase the others.
+    app_name = icon_name.replace("_", " ").strip().title()
+
+    if app_name == "":
+        app_name = "[Unknown App Name]"
+
+    return app_name
+
+
 def download_with_progress(
     url: str, headers: dict[str, str], chunk_size: int = 8192
 ) -> io.BytesIO:
@@ -568,7 +583,7 @@ icon_theme_name = "hicolor"
 icon_theme_dir = xdg_data_home / f"icons/{icon_theme_name}"
 icon_context = "apps"  # Used for overriding app icons.
 target_icon_name: str = settings.name  # Named icon identifier to override.
-target_icon_name_titlecase = target_icon_name.title()
+target_icon_name_titlecase = icon_name_to_app_name(target_icon_name)
 
 print(f"\nSaving new {target_icon_name_titlecase} app icons to disk:")
 installed_icons: list[Path] = []
@@ -656,7 +671,7 @@ print(
     f'These instructions have also been saved to "{removal_text_file.name}".\n'
     "***\n\n"
     "Patching complete! It may take a few minutes for the new icon to become active in your desktop environment.\n\n"
-    f"If you're on GNOME, opening the Activities Overview and searching for {target_icon_name_titlecase} seems to help it detect the change a bit faster.\n\n"
+    f'If you\'re on GNOME, opening the Activities Overview and searching for the "{target_icon_name_titlecase}" application seems to help it detect the change a bit faster.\n\n'
     f"The new app icon will remain active forever, even after future {target_icon_name_titlecase} app updates!\n\n"
     "You will never need to run this patcher again!"
 )
