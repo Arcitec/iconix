@@ -1,4 +1,4 @@
-# Iconix: Discord Skins for Vesktop v2.1.0
+# Iconix: Discord Skins for Vesktop v2.2.0
 
 Makes Vesktop feel more at home for the average Discord enjoyers.
 
