@@ -6,6 +6,12 @@
 # Name: iconix
 # Version: 2.1.0
 
+import sys
+
+if sys.version_info < (3, 10):
+    print("This application requires Python 3.10 or higher.")
+    exit(1)
+
 from dataclasses import dataclass, field
 from pathlib import Path
 from PIL import Image
@@ -15,7 +21,6 @@ import os
 import re
 import shutil
 import subprocess
-import sys
 import tarfile
 import urllib.request
 
