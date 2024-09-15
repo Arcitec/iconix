@@ -36,7 +36,9 @@ python -m pip install -r requirements-svg.txt
 ./iconix
 ```
 
-7. Have fun! You *never* have to run the patcher again.
+_**Important:** By default, Iconix patches the native Vesktop icon. If you are using the Flatpak version of Vesktop instead, then you **have to** add `-n dev.vencord.Vesktop` to your final command arguments so that it patches the Flatpak's icon!_
+
+7. Have fun! You *never* have to run the patcher again, except if you want to change the icon to a different design. ;-)
 
 
 ---
